@@ -1,0 +1,171 @@
+<PropertyList>
+ <!-- sozius instruments -->
+ <!-- top 4 -->
+ <!-- speed -->
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/asi750-ger/asi750-ger.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>-0.13</y-m>
+   <z-m>0.437</z-m>
+  </offsets>
+ </model>
+ <!-- alti -->
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/alt-ger/alt-ger.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>-0.043</y-m>
+   <z-m>0.439</z-m>
+  </offsets>
+ </model>
+ <!-- hori -->
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/att-ger/att-ger.xml</path>
+  <offsets>
+   <x-m>4.211</x-m>
+   <y-m>0.044</y-m>
+   <z-m>0.437</z-m>
+  </offsets>
+ </model>
+<!-- climb-/sinkrate -->
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/vario30-ger/vario30-ger.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>0.131</y-m>
+   <z-m>0.437</z-m>
+  </offsets>
+ </model>
+
+ <!-- mid 6 -->
+ <!-- <model>
+  <path>Aircraft/bf109/Models/Instruments/gear-emergency/gear-emergency.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>-0.219</y-m>
+   <z-m>0.35</z-m>
+   <roll-deg>30.0</roll-deg>
+  </offsets>
+ </model> -->
+
+<model>
+  <path>Aircraft/bf109/Models/Instruments/gearindicator-ger/gear-ger.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>-0.099</y-m>
+   <z-m>0.354</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/prop-pitch/pitchindicator.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>-0.026</y-m>
+   <z-m>0.354</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/coolant-temp-ger/cooltemp.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>0.049</y-m>
+   <z-m>0.354</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/oiltemp-ger/oiltemp.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>0.125</y-m>
+   <z-m>0.354</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/oil-fuelpress-ger/oil-fuelpress-ger.xml</path>
+  <offsets>
+   <x-m>4.186</x-m>
+   <y-m>0.2</y-m>
+   <z-m>0.354</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/fuel400/fuelgauge.xml</path>
+  <offsets>
+   <x-m>4.176</x-m>
+   <y-m>0.215</y-m>
+   <z-m>0.185</z-m>
+  </offsets>
+ </model>
+
+ <!-- lowest left/right -->
+ <!-- <model>
+  <path>Aircraft/bf109/Models/Instruments/remote-compass-ger/remote-ger.xml</path>
+  <offsets>
+   <x-m>4.176</x-m>
+   <y-m>-0.198</y-m>
+   <z-m>0.269</z-m>
+  </offsets>
+ </model> -->
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/tach35-ger/tach35-ger.xml</path>
+  <offsets>
+   <x-m>4.176</x-m>
+   <y-m>-0.198</y-m>
+   <z-m>0.269</z-m>
+  </offsets>
+ </model>
+ 
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/man18-ger/man18-ger.xml</path>
+  <offsets>
+   <x-m>4.176</x-m>
+   <y-m>0.205</y-m>
+   <z-m>0.269</z-m>
+  </offsets>
+ </model>
+
+ <!-- sozius controls -->
+<model>
+  <path>Aircraft/bf109/Models/Instruments/ignition-ger/ignition-ger.xml</path>
+  <offsets>
+   <x-m>4.18</x-m>
+   <y-m>-0.255</y-m>
+   <z-m>0.27</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/bf109/Models/Instruments/starter-ger/starter-ger.xml</path>
+  <offsets>
+   <x-m>4.18</x-m>
+   <y-m>-0.205</y-m>
+   <z-m>0.20</z-m>
+  </offsets>
+ </model>
+
+<!-- red button -->
+<model>
+  <path>Aircraft/bf109/Models/Instruments/shutoff-ger/shutoff.xml</path>
+  <offsets>
+   <x-m>4.19</x-m>
+   <y-m>-0.157</y-m>
+   <z-m>0.354</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/bf109/Models/Instruments/canopyjett-ger/canopyjett-ger-g12.xml</path>
+  <offsets>
+   <x-m>4.18</x-m>
+   <y-m>-0.23</y-m>
+   <z-m>0.36</z-m>
+	 <roll-deg>140.0</roll-deg>
+  </offsets>
+ </model>
+</PropertyList>
