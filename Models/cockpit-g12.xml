@@ -1,16 +1,18 @@
 <PropertyList>
 
-  <path>cockpit.ac</path>
+  <path>cockpit-g12.ac</path>
 
   <effect>
     <inherits-from>Aircraft/bf109/Models/Effects/interiour_bumpspec</inherits-from>
     <object-name>interiour</object-name>
     <object-name>panel</object-name>
     <object-name>subpanel</object-name>
+    <object-name>panel_back</object-name>
+    <object-name>subpanel_back</object-name>
   </effect>
 
  <!-- panel models -->
-
+ <!-- front cockpit -->
 <model>
   <path>Aircraft/bf109/Models/Instruments/switches/masterarm-ger.xml</path>
   <offsets>
@@ -52,6 +54,73 @@
   </offsets>
  </model>
 
+ <!-- sozius instruments -->
+ <model>
+  <path>Aircraft/bf109/Models/instruments-g12.xml</path>
+  <offsets>
+   <x-m>-0.06</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </offsets>
+ </model>
+ 
+<!-- sozius controls -->
+<model>
+  <path>Aircraft/bf109/Models/Instruments/throttle-109/throttle-ger.xml</path>
+  <offsets>
+   <x-m>4.23</x-m>
+   <y-m>-0.25</y-m>
+   <z-m>0.17</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/bf109/Models/Instruments/taillock-ger/taillock.xml</path>
+  <offsets>
+   <x-m>4.595</x-m>
+   <y-m>-0.27</y-m>
+   <z-m>0.28</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/bf109/Models/Instruments/primer-ger/primer-ger.xml</path>
+  <offsets>
+   <x-m>4.35</x-m>
+   <y-m>-0.23</y-m>
+   <z-m>-0.145</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/bf109/Models/Instruments/coolflap-ger/coolflap-ger.xml</path>
+  <offsets>
+   <x-m>4.21</x-m>
+   <y-m>0.26</y-m>
+   <z-m>0.09</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/trim-flap-wheel/flapwheel.xml</path>
+  <offsets>
+   <x-m>4.545</x-m>
+   <y-m>-0.3</y-m>
+   <z-m>0.1</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/bf109/Models/Instruments/trim-flap-wheel/trimwheel.xml</path>
+  <offsets>
+   <x-m>4.545</x-m>
+   <y-m>-0.25</y-m>
+   <z-m>0.1</z-m>
+  </offsets>
+ </model>
+
+ <!-- front cockpit -->
+ <!-- altitude (main panel lower left) -->
  <model>
   <path>Aircraft/bf109/Models/Instruments/alt-ger/alt-ger.xml</path>
   <offsets>
@@ -60,6 +129,7 @@
    <z-m>0.351</z-m>
   </offsets>
  </model>
+ <!-- right side of main panel -->
  <model>
   <path>Aircraft/bf109/Models/Instruments/coolant-temp-ger/cooltemp.xml</path>
   <offsets>
@@ -103,6 +173,7 @@
   </offsets>
  </model>
 
+<!-- red round light below emergency gear-lever --> 
  <model>
   <path>Aircraft/bf109/Models/Instruments/lights/fuel-reserve.xml</path>
   <offsets>
@@ -251,7 +322,7 @@
  </model>
 
 
-
+<!-- (primer-like) pull-lever-switch ! -->
 <model>
   <path>Aircraft/bf109/Models/Instruments/fueldump-ger/fueldump-ger.xml</path>
   <offsets>
@@ -260,6 +331,7 @@
    <z-m>0.18</z-m>
   </offsets>
  </model>
+
 <model>
   <path>Aircraft/bf109/Models/Instruments/coolflap-ger/coolflap-ger.xml</path>
   <offsets>
@@ -331,6 +403,7 @@
   </offsets>
  </model>
 
+<!-- lever left above trim-wheels -->
 <model>
   <path>Aircraft/bf109/Models/Instruments/taillock-ger/taillock.xml</path>
   <offsets>
@@ -397,7 +470,17 @@
   </offsets>
  </model>
 
- 
+ <!-- sozius extension -->
+<model>
+  <path>Aircraft/bf109/Models/Instruments/kg13/stick.xml</path>
+  <offsets>
+   <x-m>4.379</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.181</z-m>
+  </offsets>
+ </model>
+ <!-- /sozius extension -->
+
 <model>
   <name>O2-Pressure</name>
   <path>Aircraft/bf109/Models/Instruments/o2press-ger/o2pressure.xml</path>
@@ -426,9 +509,20 @@
    <z-m>-0.11</z-m>
   </offsets>
  </model>
+ <!-- sozius extension -->
+ <model>
+   <name>BackseatPedals</name>
+   <path>pedals.xml</path>
+   <offsets>
+   <x-m>3.95</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.11</z-m>
+  </offsets>
+ </model>
+ <!-- /sozius extension -->
 
 <model>
-  <path>Aircraft/bf109/Models/o2.ac</path>
+  <path>Aircraft/bf109/Models/o2-g12.ac</path>
   <offsets>
    <x-m>0.0</x-m>
    <y-m>0.0</y-m>
@@ -455,7 +549,7 @@
  </model>
 -->
 <model>
-  <path>Aircraft/bf109/Models/uv-lamp.ac</path>
+  <path>Aircraft/bf109/Models/uv-lamp-g12-low.ac</path>
   <offsets>
    <x-m>0.0</x-m>
    <y-m>0.0</y-m>
@@ -464,7 +558,7 @@
  </model>
 
 <model>
-  <path>Aircraft/bf109/Models/benzinleitung.ac</path>
+  <path>Aircraft/bf109/Models/benzinleitung-g12.ac</path>
   <offsets>
    <x-m>0.0</x-m>
    <y-m>0.0</y-m>
