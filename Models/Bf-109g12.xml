@@ -803,10 +803,10 @@
   <type>select</type>
   <object-name>pilot</object-name>
   <condition>
-   <greater-than>
+   <not-equals>
     <property>sim/current-view/view-number</property>
     <value>0.0</value>
-   </greater-than>
+   </not-equals>
   </condition>
  </animation> -->
 
