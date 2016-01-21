@@ -4,21 +4,23 @@
 Bf 109 simulation config.
 
 February 2006,  Detlef Faber
+July 2015, rollershutter
 ************************************************************************
 -->
 
 <PropertyList>
+<!--<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml"> -->
  <combat>
 			<enabled type="bool">true</enabled>
  </combat>
 	<hitcount type="float">0.0</hitcount>
  <sim>
 
-  <description>Messerschmitt BF-109 G14</description>
-  <author>Detlef Faber</author>
+  <description>Messerschmitt BF-109 G12</description>
+  <author>Detlef Faber, rollershutter</author>
   <status>production</status>
  <rating>
-    <FDM type="int">4</FDM>
+    <!--<FDM type="int">4</FDM> -->
     <systems type="int">4</systems>
     <model type="int">4</model>
     <cockpit type="int">5</cockpit>
@@ -54,6 +56,10 @@ February 2006,  Detlef Faber
 					<gear n="2">
 							<jammed type="bool">false</jammed>
 					</gear>
+					<!-- perhaps missing? -->
+					<gear n="3">
+							<jammed type="bool">false</jammed>
+					</gear>
 			</gear>
 			<fail-type type= "int">0</fail-type>
 	</failure-manager>
@@ -77,23 +83,39 @@ February 2006,  Detlef Faber
 
 
   <model>
-   <path>Aircraft/bf109/Models/Bf-109g.xml</path>
+   <path>Aircraft/bf109/Models/Bf-109g12.xml</path>
 		<map>
 			<default_exit>
 				<x-offset-m>4</x-offset-m>
 				<y-offset-m>-1.0</y-offset-m>
 			</default_exit>
 		</map>
-   <crew>
-<!--
-		 <pilot n="0">
-     <pose include = "Include/ju52_pilot.xml"></pose>
+
+<!--   <crew>
+    <pilot n="0">
+     <pose include = "Models/Human/pose-male-pilot.xml"></pose>
 				<gender>0</gender>
 				<character>0</character>
-				<outfit>2</outfit>
+				<outfit>0</outfit> -->
+				<!--<equipment>0</equipment> -->
+				<!--<eyewear>1</eyewear>
+				<headgear>1</headgear>
      </pilot>
--->
-   </crew>
+
+    <pilot n="1">
+     <pose include = "Models/Human/pose-copilot.xml"></pose>
+				<gender>0</gender>
+				<character>0</character>
+				<outfit>0</outfit> -->
+				<!--<equipment>0</equipment>-->
+				<!--<headgear>1</headgear>
+     </pilot>
+   </crew>-->
+
+   <!-- Human models persistent menu choice -->
+   <occupants type="bool">true</occupants>
+<!-- -->
+
    <livery>
 		 <trop type="bool">false</trop>
      <variant type="string">Default</variant>
@@ -155,17 +177,29 @@ February 2006,  Detlef Faber
 			<name>FlightGear</name>
 			<texture>../../Generic/Logos/FlightGear.png</texture>
 		</logo>
-   <crew>
+<!-- test hide: looking for toggled crew[1] props... <crew> 
       <pilot>
         <visible>1.0</visible>
       </pilot>
-   </crew>
+      <pilot2>
+        <visible>1.0</visible>
+      </pilot2>
+   </crew> -->
   </model> 
+
+        <!-- Walker settings -->
+        <!--<walker>
+            <gender>1</gender>
+            <altitude-ft>-5.0</altitude-ft>
+        </walker> -->
+
+
 	<multiplay include="Dialogs/multiplay.xml">
 	</multiplay>
 		<tutorials>
 			<tutorial include="Tutorials/startup_tutorial.xml"/>
 		</tutorials>
+
   <view n="0">
    <internal archive="y">true</internal>
    <config>
@@ -217,6 +251,25 @@ February 2006,  Detlef Faber
    </config>
   </view>
 
+<!-- copilot view -->
+  <view n="1501">
+  <!--<view n="102"> -->
+   <name>Copilot View</name>
+   <type>lookfrom</type>
+   <internal archive="y">true</internal>
+   <config>
+    <from-model type="bool">true</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <!-- left-right -->
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <!-- down-up -->
+    <y-offset-m archive="y" type="double">0.56</y-offset-m>
+    <!-- front-back -->
+    <z-offset-m archive="y" type="double">1.85</z-offset-m>
+    <pitch-offset-deg>-7.5</pitch-offset-deg>
+   </config>
+  </view>
+
  <autopilot>
    <config>
      <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
@@ -242,6 +295,10 @@ February 2006,  Detlef Faber
     <key>
       <name>C</name>
       <desc>toggle Canopy</desc>
+    </key>
+    <key>
+      <name>o</name>
+      <desc>toggle Rear Canopy</desc>
     </key>
    <key>
       <name>Ctrl-p</name>
@@ -283,7 +340,10 @@ February 2006,  Detlef Faber
       <name>H</name>
       <desc>Fire WGR 21</desc>
     </key>
-<text>Use the Equipment-Fuel and Payload Dialog to select external Stores. l toggles the Livery select Dialog
+<text>The trainer-variant has a significant smaller sized main-fueltank, so the droptank should be used for higher range.
+(This is not yet represented in a individual FDM.)
+
+Use the Equipment-Fuel and Payload Dialog to select external Stores. l toggles the Livery select Dialog
 
 Some notes on the propeller adjust mechanism:
 
@@ -456,6 +516,11 @@ Don't forget to release Tailwheel lock (lever on the left cockpitwall) before ta
       <jetthandle-pulled type="bool">false</jetthandle-pulled>
       <release type="bool">false</release>
     </canopy>
+    <!-- quick c/p -->
+    <canopy_back>
+      <jetthandle-pulled type="bool">false</jetthandle-pulled>
+      <release type="bool">false</release>
+    </canopy_back>
   <engines>
       <engine n="0">
         <magnetos>0</magnetos>
@@ -488,6 +553,7 @@ Don't forget to release Tailwheel lock (lever on the left cockpitwall) before ta
       <gear n="3">
         <gear-down type="bool">false</gear-down>
       </gear>
+
       <tailwheel-lock>true</tailwheel-lock>
       <bellybrake type="float">1.0</bellybrake>
 			<emergency-extension type="bool">false</emergency-extension>
@@ -540,6 +606,15 @@ Don't forget to release Tailwheel lock (lever on the left cockpitwall) before ta
         <binding n="0">
           <command>nasal</command>
           <script>bf109.toggle_canopy()</script>
+        </binding>
+      </key>
+
+      <key n="111">
+        <name>o</name>
+        <desc>Toggle Rear Canopy</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>bf109.toggle_canopy_back()</script>
         </binding>
       </key>
 
@@ -688,6 +763,7 @@ Don't forget to release Tailwheel lock (lever on the left cockpitwall) before ta
   <nasal>
     <bf109>
       <file>Aircraft/bf109/Nasal/bf109.nas</file>
+      <file>Aircraft/bf109/Nasal/bf109-g12.nas</file>
     </bf109>
 		<weapons>
 				<file>Aircraft/bf109/Nasal/weapons.nas</file>
@@ -699,7 +775,6 @@ Don't forget to release Tailwheel lock (lever on the left cockpitwall) before ta
 			<file>Aircraft/bf109/Nasal/hitcheck.nas</file>
 		</hitcheck>
   </nasal>
-
 
 </PropertyList>
 
