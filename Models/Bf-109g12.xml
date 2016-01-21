@@ -2,7 +2,7 @@
 
 <PropertyList>
 
- <path>bf109g14.ac</path>
+ <path>bf109g12.ac</path>
  <offsets>
    <x-m>-2.999</x-m>
  </offsets>
@@ -98,6 +98,8 @@
 		<shader>chrome</shader>
 		<texture>Aircraft/bf109/Models/glass_shader.png</texture>
 		<object-name>canopyglass</object-name>
+		<object-name>canopyglass_mid</object-name>
+		<object-name>canopyglass_back</object-name>
 		<object-name>frontglass</object-name>
 	</animation>
 
@@ -110,6 +112,8 @@
  			<inherits-from>Aircraft/bf109/Models/Effects/109_bumpspec</inherits-from>
   	  <object-name>Fuselage</object-name>
   	  <object-name>canopy</object-name>
+  	  <object-name>canopy_mid</object-name>
+  	  <object-name>canopy_back</object-name>
   	  <object-name>rearband</object-name>
   	  <object-name>fwdband</object-name>
   	  <object-name>cowlunderside</object-name>
@@ -136,7 +140,7 @@
 
 
 	<model> 
-      <path>Aircraft/bf109/Models/cockpit.xml</path>
+      <path>Aircraft/bf109/Models/cockpit-g12.xml</path>
 			<name>cockpit</name>
     </model>
  <animation>
@@ -356,18 +360,22 @@
    </entry>
    <entry>
     <ind>1.00</ind>
-    <dep>95.0</dep>
+    <dep>-95.0</dep>
    </entry>
   </interpolation>
-  <center>
-   <x-m>3.10</x-m>
-   <y-m>0.30</y-m>
-   <z-m>0.37</z-m>
-  </center>
+
   <axis>
-   <x>-1.0</x>
+   <!-- not needed -->
+   <!--<x>-1</x>
    <y>0.0</y>
-   <z>0.0</z>
+   <z>0.0</z>-->
+
+   <x1-m>3.319</x1-m>
+   <y1-m>0.310</y1-m>
+   <z1-m>0.366</z1-m>
+   <x2-m>3.991</x2-m>
+   <y2-m>0.310</y2-m>
+   <z2-m>0.347</z2-m>
   </axis>
  </animation>
 
@@ -378,6 +386,49 @@
   <condition>
    <not-equals>
     <property>controls/canopy/release</property>
+    <value>true</value>
+   </not-equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>canopy_back</object-name>
+	<object-name>canopyglass_back</object-name>
+  <property>controls/canopy_back/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>-95.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <!-- not needed -->
+   <!-- <x>-1</x>
+   <y>0.0</y>
+   <z>0.0</z>
+   -->
+
+   <x1-m>4.3417</x1-m>
+   <y1-m>0.3103</y1-m>
+   <z1-m>0.3367</z1-m>
+   <x2-m>5.0681</x2-m>
+   <y2-m>0.3105</y2-m>
+   <z2-m>0.3148</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>canopy_back</object-name>
+	<object-name>canopyglass_back</object-name>
+  <condition>
+   <not-equals>
+    <property>controls/canopy_back/release</property>
     <value>true</value>
    </not-equals>
   </condition>
@@ -736,15 +787,16 @@
   </axis>
  </animation>
 
+<!-- pilot
     <model> 
       <path>Aircraft/Generic/Human/Models/pilot.xml</path>
 	  <name>pilot</name>
    <nopreview/>
       <offsets> 
-        <x-m>3.6</x-m>
+        <x-m>3.315</x-m>
         <y-m>0.0</y-m>
-        <z-m>-0.08</z-m>
-        <pitch-deg>22</pitch-deg>
+        <z-m>-1.01</z-m>
+        <pitch-deg>16</pitch-deg>
       </offsets>
     </model>
  <animation>
@@ -756,9 +808,31 @@
     <value>0.0</value>
    </greater-than>
   </condition>
- </animation>
+ </animation> -->
 
-
+<!-- sozius pilot
+    <model> 
+      <path>Aircraft/Generic/Human/Models/copilot.xml</path>
+	  <name>copilot</name>
+   <nopreview/>
+      <offsets> 
+        <x-m>4.47</x-m>
+        <y-m>0.0</y-m>
+        <z-m>-1.02</z-m>
+        <pitch-deg>16</pitch-deg>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>copilot</object-name>
+  <condition>
+   <not-equals>
+    <property>sim/current-view/view-number</property>
+    <value>8.0</value>
+   </not-equals>
+  </condition>
+ </animation> -->
+ 
   <model> 
    <path>Aircraft/bf109/Models/Effects/blaze.xml</path>
    <name>Blaze-l</name>
@@ -851,6 +925,7 @@
     <object-name>rightflap</object-name>
     <object-name>horstab</object-name>
 			<object-name>canopy</object-name>
+			<object-name>canopy_back</object-name>
 			<object-name>intake</object-name>
 			<object-name>leftslat</object-name>
 			<object-name>rightslat</object-name>
