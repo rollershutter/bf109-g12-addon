@@ -1,0 +1,15 @@
+# Messerschmitt Bf-109 G12 Addon
+# author: Sebastian (rollershutter)
+#
+# this is a Addon for the existing bf109 by dfaber, simply copy the content into your existing bf109 folder.
+
+This is the trainer-variant of the popular Messerschmitt Bf 109.
+In the real thing, the main fueltank was resized due to the installation of the second cockpit-place so the droptank would be default equippment (This is not yet represented by a new FDM-file).
+
+TODO:
+-Dual Control
+-FDM / Weight
+-Main Fuel reduce
+project new meshes to textures
+-[...]
+-cleaning
